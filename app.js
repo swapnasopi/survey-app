@@ -8,7 +8,7 @@ app.directive('survey', function(surveyFactory) {
 		link: function(scope, elem, attrs) {
 			scope.start = function() {
 				scope.id = 0;
-				scope.quizOver = false;
+				scope.serveyOver = false;
 				scope.inProgress = true;
 				scope.getQuestion();
 			};
@@ -26,7 +26,7 @@ app.directive('survey', function(surveyFactory) {
 					scope.answer = q.answer;
 					scope.answerMode = true;
 				} else {
-					scope.quizOver = true;
+					scope.serveyOver = true;
 				}
 			};
 
@@ -68,19 +68,19 @@ app.factory('surveyFactory', function() {
 			answer: 2
 		},
 		{
-			question: "Which was the first country to issue paper currency?",
-			options: ["USA", "France", "Italy", "China"],
+			question: "Which of the given TECHNOLOGIES is not in convene",
+			options: ["Microsoft", "Mobile", "Service Now", "Thunder bird Mail"],
 			answer: 3
 		},
 		{
-			question: "Which city hosted the 1996 Summer Olympics?",
-			options: ["Atlanta", "Sydney", "Athens", "Beijing"],
-			answer: 0
+			question: "Which of the following Cloud Service not Offerings by convene",
+			options: ["Cloud Migration Services", "Hybrid Cloud Deployment", "PaaS Solutions", "SMS services"],
+			answer: 3
 		},
 		{	
-			question: "Who invented telephone?",
-			options: ["Albert Einstein", "Alexander Graham Bell", "Isaac Newton", "Marie Curie"],
-			answer: 1
+			question: "Which of the Following incorrect approch of convene",
+			options: ["Planning", "Platform Selection", "Rule Engine integration", "Development "],
+			answer: 2
 		}
 	];
 
