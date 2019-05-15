@@ -67,10 +67,10 @@ button {
   .checkmark {
 	position: absolute;
 	top: 12px;
-	left: 38%;
+	left: 35%;
 	height: 15px;
 	width: 15px;
-	background-color: #fff;
+	background-color: #000;
 	border-radius: 50%;
   }
  
