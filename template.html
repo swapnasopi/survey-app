@@ -1,34 +1,36 @@
-<div class="quiz-area" ng-show="inProgress">
-	<div ng-show="!quizOver">
+<div class="survey-area" ng-show="inProgress">
+	<div ng-show="!serveyOver">
 		<h2 id="question">{{question}}</h2>
 		<ul id="options">
 			<li ng-repeat="option in options">
-				<label>
-					<input type="radio" name="answer" value="{{option}}">
-					{{option}}
-				</label>
+				
+				<label class="contain">{{option}}
+						<input type="radio" name="answer" value="{{option}}">
+						<span class="checkmark"></span>
+					  </label>
+					  
 			</li>
 		</ul>
-		<button ng-click="checkAnswer()" ng-show="answerMode">Submit</button>
+		<button ng-click="checkAnswer()" class="btn btn-outline-primary" ng-show="answerMode">Submit</button>
 
 		<div ng-show="!answerMode">
-			<button ng-click="nextQuestion()" class="next-question">Next</button>
-			<span ng-show="correctAns">That is correct!</span>
-			<span ng-show="!correctAns">Sorry, that is an incorrect answer.</span>
+			<button class="btn btn-outline-success" ng-click="nextQuestion()" class="next-question">Next</button>
+			<span ng-show="correctAns" class="text-success">That is correct!</span>
+			<span ng-show="!correctAns" class="text-danger">Sorry, that is an incorrect answer.</span>
 		</div>
 	</div>
 
-	<div ng-show="quizOver">
-		<h2>Quiz is over</h2>
-		<button ng-click="reset()">Play again</button>
+	<div ng-show="serveyOver">
+		<h2>Survey is Completed</h2>
+		<button ng-click="reset()" class="btn btn-outline-primary">Start again</button>
 	</div>
 
 	<div id="score">
-		Score: {{score}}
+		You Answered: {{score}}
 	</div>
 </div>
 
 <div class="intro" ng-show="!inProgress">
-	<p>Sample Survey Questions</p>
-	<button id="startQuiz" ng-click="start()">Start my Survey Questions</button>
+	<p class="text-success">Sample Survey Questions</p>
+	<button id="startQuiz" class="btn btn-outline-primary" ng-click="start()">Start Survey Questions</button>
 </div>
